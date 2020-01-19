@@ -1,6 +1,6 @@
 {
   "name": "mernproject2",
-  "version": "1.0.0",
+  "version": "12.13.1",
   "description": "Shopping",
   "main": "server.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM-CONFIG-PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "cd client && NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "author": "Batan",
   "license": "ISC",
@@ -21,5 +21,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "node": "12.13.1",
+    "npm": "6.12.1"
   }
 }
