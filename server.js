@@ -5,6 +5,9 @@ require("dotenv").config();
 
 const app = express();
 
+//DB
+const db = require("./config/keys").ModuleURI;
+
 //BODYPARSER
 app.use(express.json());
 
@@ -21,7 +24,7 @@ if(process.env.NODE_ENV === "production") {
 }
 
 //MONGODB
-mongoose.connect("mongodb+srv://batan:bababab1@mycluster01-oe33g.gcp.mongodb.net/shop?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("MongoDB is connected"));
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("MongoDB is connected"));
 
 //SERVERT START
 const PORT = process.env.PORT || 5000;
