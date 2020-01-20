@@ -24,7 +24,7 @@ if(process.env.NODE_ENV === "production") {
 }
 
 //MONGODB
-mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("MongoDB is connected"));
+mongoose.connect(`${process.env.MONGODB_URI}`, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("MongoDB is connected"));
 
 //SERVERT START
 const PORT = process.env.PORT || 5000;
